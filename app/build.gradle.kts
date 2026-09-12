@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.vacation_planner"
+        applicationId = "com.example.automotivetracker"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
