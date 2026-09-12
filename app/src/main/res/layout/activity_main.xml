@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <!-- Notebook cover -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/background_image" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="326dp"
+        android:layout_height="216dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160dp"
+        android:background="#0D4F8A"
+        android:backgroundTint="#0D508B"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:shadowColor="#183875"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
+        android:singleLine="false"
+        android:soundEffectsEnabled="false"
+        android:text="Automotive Service Tracker"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="210dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="690dp"
+        android:backgroundTint="#0D508B"
+        android:fontFamily=""
+        android:shadowColor="#010724"
+        android:shadowDx="13"
+        android:shadowDy="13"
+        android:shadowRadius="12"
+        android:text="My Vehicles"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+</FrameLayout>

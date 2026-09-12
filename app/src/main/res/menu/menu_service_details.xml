@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Save Service"
+        android:id="@+id/serviceSave"/>
+    <item android:title="Delete Service"
+        android:id="@+id/servicedelete"/>
+    <item android:title="Set Service Reminder"
+        android:id="@+id/serviceAlert"/>
+</menu>
