@@ -31,7 +31,7 @@ public class vehicleUnitTest {
     @Test
     public void serviceRecordGetSetTest(){
         ServiceRecord serviceRecord=new ServiceRecord(1,1,"Oil Change",
-                "09/13/2026",
+                "09/13/2026" ,
                 5000,50.00,"Oil changed");
         serviceRecord.setServiceType("brake repair");
         serviceRecord.setServiceDate("09/14/2026");
