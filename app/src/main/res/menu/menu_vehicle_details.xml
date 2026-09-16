@@ -3,7 +3,7 @@
 
     <item android:title="Save Vehicle"
         android:id="@+id/vehiclesave"/>
-    <item android:title="Delete Vacation"
+    <item android:title="Delete Vehicle"
         android:id="@+id/vehicledelete"/>
     <item android:title="Service Report"
         android:id="@+id/servicereport"/>

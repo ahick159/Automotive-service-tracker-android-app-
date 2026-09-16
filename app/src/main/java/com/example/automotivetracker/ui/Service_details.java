@@ -140,7 +140,7 @@ public class Service_details extends AppCompatActivity {
 
             if (!editServiceMileage.getText().toString().isEmpty()) {
                 try {
-                    ServiceMileage = Integer.parseInt(
+                    ServiceMileage=Integer.parseInt(
                             editServiceMileage.getText().toString()
                     );
                 } catch (NumberFormatException e) {
@@ -186,21 +186,19 @@ public class Service_details extends AppCompatActivity {
                 return true;
             }
 
-            if (ServiceMileage < 0) {
-                Toast.makeText(
-                        Service_details.this,
-                        "Mileage cannot be negative",
+            if (ServiceMileage<0) {
+                Toast.makeText(Service_details.this, "Mileage cannot be negative",
                         Toast.LENGTH_SHORT
                 ).show();
                 return true;
             }
 
-            ServiceCost = serviceCost;
+            ServiceCost=serviceCost;
             ServiceRecord serviceRecord;
 
-            if (ServiceID == -1) {
-                ServiceID = 1;
-                List<ServiceRecord> allServiceRecords =
+            if (ServiceID==-1) {
+                ServiceID=1;
+                List<ServiceRecord>allServiceRecords =
                         repository.getAllServiceRecords();
 
                 if (!allServiceRecords.isEmpty()) {
@@ -209,36 +207,21 @@ public class Service_details extends AppCompatActivity {
                     ).getServiceID() + 1;
                 }
 
-                serviceRecord = new ServiceRecord(
-                        ServiceID,
-                        VehicleID,
-                        editServiceType.getText().toString(),
-                        ServiceDate,
-                        ServiceMileage,
-                        ServiceCost,
-                        ServiceNotes
-                );
+                serviceRecord=new ServiceRecord(ServiceID, VehicleID, editServiceType.getText().toString(), ServiceDate, ServiceMileage, ServiceCost, ServiceNotes);
 
                 repository.insert(serviceRecord);
                 finish();
 
             } else {
-                serviceRecord = new ServiceRecord(ServiceID,
-                        VehicleID,
-                        editServiceType.getText().toString(),
-                        ServiceDate,
-                        ServiceMileage,
-                        ServiceCost,
-                        ServiceNotes
-                );
+                serviceRecord = new ServiceRecord(ServiceID, VehicleID, editServiceType.getText().toString(), ServiceDate, ServiceMileage, ServiceCost, ServiceNotes);
                 repository.update(serviceRecord);
                 finish();
             }
         }
 
 
-        if (item.getItemId() == R.id.servicedelete) {
-            if (ServiceID == -1) {
+        if (item.getItemId()==R.id.servicedelete) {
+            if (ServiceID ==-1) {
                 finish();
             } else {
 
@@ -278,8 +261,7 @@ public class Service_details extends AppCompatActivity {
                                 Context.ALARM_SERVICE
                         );
                 alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
-                Toast.makeText(Service_details.this, "Service reminder set", Toast.LENGTH_SHORT).show();
-                },
+                Toast.makeText(Service_details.this,"Service reminder set", Toast.LENGTH_SHORT).show();},
                     reminderCalendar.get(Calendar.YEAR),
                     reminderCalendar.get(Calendar.MONTH),
                     reminderCalendar.get(Calendar.DAY_OF_MONTH));
@@ -289,9 +271,9 @@ public class Service_details extends AppCompatActivity {
         return true;
     }
     private void updateLabel() {
-        String myFormat = "MM/dd/yyyy";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        ServiceDate = sdf.format(serviceCalendar.getTime());
+        String myFormat="MM/dd/yyyy";
+        SimpleDateFormat sdf=new SimpleDateFormat(myFormat, Locale.US);
+        ServiceDate=sdf.format(serviceCalendar.getTime());
         ServiceDateButton.setText(ServiceDate);
     }
 }

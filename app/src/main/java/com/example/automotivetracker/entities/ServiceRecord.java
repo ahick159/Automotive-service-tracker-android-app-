@@ -17,11 +17,11 @@ public class ServiceRecord extends AutomotiveRecord{
 
     public ServiceRecord(int serviceID, int vehicleID, String serviceType,
                          String serviceDate, int mileage, double cost, String notes) {
-        this.serviceID = serviceID;
-        this.vehicleID = vehicleID;
-        this.serviceType = serviceType;
-        this.serviceDate = serviceDate;
-        this.mileage = mileage;
+        this.serviceID=serviceID;
+        this.vehicleID=vehicleID;
+        this.serviceType=serviceType;
+        this.serviceDate=serviceDate;
+        this.mileage =mileage;
         this.cost = cost;
         this.notes = notes;
     }
@@ -30,7 +30,7 @@ public class ServiceRecord extends AutomotiveRecord{
     }
 
     public void setServiceID(int serviceID) {
-        this.serviceID = serviceID;
+        this.serviceID=serviceID;
     }
 
     public int getVehicleID() {
@@ -38,7 +38,7 @@ public class ServiceRecord extends AutomotiveRecord{
     }
 
     public void setVehicleID(int vehicleID) {
-        this.vehicleID = vehicleID;
+        this.vehicleID=vehicleID;
     }
 
     public String getServiceType() {
@@ -46,7 +46,7 @@ public class ServiceRecord extends AutomotiveRecord{
     }
 
     public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
+        this.serviceType= serviceType;
     }
 
     public String getServiceDate() {
@@ -54,27 +54,27 @@ public class ServiceRecord extends AutomotiveRecord{
     }
 
     public void setServiceDate(String serviceDate) {
-        this.serviceDate = serviceDate;
+        this.serviceDate=serviceDate;
     }
 
     public int getMileage() {
         return mileage;
     }
     public void setMileage(int mileage) {
-        this.mileage = mileage;
+        this.mileage=mileage;
     }
     public double getCost() {
         return cost;
     }
 
     public void setCost(double cost) {
-        this.cost = cost;
+        this.cost =cost;
     }
     public String getNotes() {
         return notes;
     }
     public void setNotes(String notes) {
-        this.notes = notes;
+        this.notes= notes;
     }
     @Override
     public String getDisplayName() {return serviceType+" - "+serviceDate;}

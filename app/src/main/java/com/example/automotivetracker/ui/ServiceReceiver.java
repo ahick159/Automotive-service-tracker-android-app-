@@ -14,7 +14,7 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 
 public class ServiceReceiver extends BroadcastReceiver {
-    String channel_id = "Service Alert";
+    String channel_id="Service Alert";
     static int notificationID=0;
 
     @Override
@@ -32,50 +32,26 @@ public class ServiceReceiver extends BroadcastReceiver {
         }
         createNotificationChannel(context, channel_id);
 
-        Notification notification =
-                new NotificationCompat.Builder(context, channel_id)
-                        .setSmallIcon(R.drawable.baseline_add_24)
-                        .setContentTitle(title)
-                        .setContentText(contentText)
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setAutoCancel(true)
-                        .build();
+        Notification notification= new NotificationCompat.Builder(context,channel_id).setSmallIcon(R.drawable.baseline_add_24)
+                .setContentTitle(title)
+                .setContentText(contentText)
+                .setPriority(NotificationCompat.PRIORITY_HIGH).setAutoCancel(true).build();
 
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(
-                        Context.NOTIFICATION_SERVICE
-                );
-
-        notificationManager.notify(
-
-                notificationID++,
-                notification
-        );
+        NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(notificationID++,notification);
     }
     private void createNotificationChannel(
             Context context,
             String channel_id) {
 
-        CharSequence name = "Vacation Alerts";
-        String description = "Vacation start and end alerts";
-        int importance = NotificationManager.IMPORTANCE_DEFAULT;
-
+        CharSequence name = "Vehicle Alert";
+        String description="Vehicle service due";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-            NotificationChannel channel =
-                    new NotificationChannel(
-                            channel_id,
-                            name,
-                            importance
-                    );
-
+            NotificationChannel channel = new NotificationChannel(channel_id, name, importance);
             channel.setDescription(description);
-
-            NotificationManager notificationManager =
-                    context.getSystemService(
-                            NotificationManager.class
-                    );
-
+            NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
     }

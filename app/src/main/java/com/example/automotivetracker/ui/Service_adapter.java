@@ -82,10 +82,7 @@ public class Service_adapter extends RecyclerView.Adapter<Service_adapter.Servic
             @NonNull Service_adapter.ServiceViewHolder holder,
             int position) {
         if (mServiceRecord != null) {
-
-            ServiceRecord current =
-                    mServiceRecord.get(position);
-
+            ServiceRecord current=mServiceRecord.get(position);
             holder.serviceItemView.setText(
                     current.getServiceType()
             );

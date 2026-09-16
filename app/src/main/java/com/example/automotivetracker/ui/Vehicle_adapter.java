@@ -65,10 +65,8 @@ public class Vehicle_adapter extends RecyclerView.Adapter<Vehicle_adapter.Vehicl
     @Override
     public void onBindViewHolder(@NonNull Vehicle_adapter.VehicleViewHolder holder, int position) {
         if(mVehicle!=null) {
-            Vehicle current = mVehicle.get(position);
-
-            String name = current.getYear() + " " + current.getMake() + " " + current.getModel();
-
+            Vehicle current=mVehicle.get(position);
+            String name=current.getYear() + " " + current.getMake() + " " + current.getModel();
             holder.VehicleItemView.setText(name);
         }
         else{
