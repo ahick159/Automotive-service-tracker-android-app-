@@ -3,6 +3,7 @@ image: node:lts
 create-pages:
   script:
     - echo "Deploying GitLab Pages"
-  pages: true
+  pages: 
+    publish: Public
   rules:
     - if: $CI_COMMIT_BRANCH == "cloud-deployment"
